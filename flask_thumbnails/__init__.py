@@ -46,13 +46,13 @@ class Thumbnail(object):
 
         miniature = self._get_name(name, fm, size, crop, bg, quality)
 
-        original_filename = os.path.join(self.app.config['MEDIA_FOLDER'], url_path, img_name)
-        thumb_filename = os.path.join(self.app.config['MEDIA_THUMBNAIL_FOLDER'], url_path, miniature)
+        original_filename = os.path.join(self.app.config['MEDIA_FOLDER'], img_name)
+        thumb_filename = os.path.join(self.app.config['MEDIA_THUMBNAIL_FOLDER'], miniature)
 
         # create folders
         self._get_path(thumb_filename)
 
-        thumb_url = os.path.join(self.app.config['MEDIA_THUMBNAIL_URL'], url_path, miniature)
+        thumb_url = os.path.join(self.app.config['MEDIA_THUMBNAIL_URL'], miniature)
 
         if os.path.exists(thumb_filename):
             return thumb_url
